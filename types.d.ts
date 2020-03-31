@@ -6,6 +6,7 @@ declare module 'rollup-plugin-babel'
 declare module 'rollup-plugin-eslint'
 declare module '@rollup/plugin-image'
 declare module 'rollup-plugin-analyzer'
+declare module '@rollup/plugin-url'
 declare module '@svgr/rollup'
 declare module 'lodash.camelcase'
 

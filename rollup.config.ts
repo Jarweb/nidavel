@@ -1,19 +1,19 @@
 import path from 'path'
 import nodeResolve from '@rollup/plugin-node-resolve'
-import builtins from 'rollup-plugin-node-builtins'
-import globals from 'rollup-plugin-node-globals'
-import clear from "rollup-plugin-clear"
+import json from '@rollup/plugin-json'
+import localResolve from '@rollup/plugin-node-resolve'
 import alias from '@rollup/plugin-alias'
-import localResolve from 'rollup-plugin-local-resolve'
+import url from '@rollup/plugin-url'
+import typescript from 'rollup-plugin-typescript2'
+import commonjs from '@rollup/plugin-commonjs'
+import clear from "rollup-plugin-clear"
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import filesize from 'rollup-plugin-filesize'
-import commonjs from 'rollup-plugin-commonjs'
 import sourceMaps from 'rollup-plugin-sourcemaps'
-import typescript from 'rollup-plugin-typescript2'
 import babel from 'rollup-plugin-babel'
 import { eslint } from 'rollup-plugin-eslint'
-import url from 'rollup-plugin-url'
-import json from 'rollup-plugin-json'
+import builtins from 'rollup-plugin-node-builtins'
+import globals from 'rollup-plugin-node-globals'
 
 const pkg = require('./package.json')
 
@@ -75,7 +75,7 @@ const config = {
     typescript({
       typescript: require('typescript'),
       useTsconfigDeclarationDir: true,
-      objectHashIgnoreUnknownHack: true
+      objectHashIgnoreUnknownHack: false
     }),
     babel({
       babelrc: false,

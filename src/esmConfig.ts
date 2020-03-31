@@ -1,25 +1,25 @@
 import { RollupOptions } from 'rollup'
 import path from 'path'
 import nodeResolve from '@rollup/plugin-node-resolve'
-import builtins from 'rollup-plugin-node-builtins'
-import globals from 'rollup-plugin-node-globals'
-import commonjs from 'rollup-plugin-commonjs'
-import clear from "rollup-plugin-clear"
-import json from 'rollup-plugin-json'
+import json from '@rollup/plugin-json'
+import localResolve from '@rollup/plugin-node-resolve'
 import alias from '@rollup/plugin-alias'
-import localResolve from 'rollup-plugin-local-resolve'
+import replace from "@rollup/plugin-replace"
+import url from '@rollup/plugin-url'
+import typescript from 'rollup-plugin-typescript2'
+import commonjs from '@rollup/plugin-commonjs'
+import image from '@rollup/plugin-image'
+import clear from "rollup-plugin-clear"
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import filesize from 'rollup-plugin-filesize'
 import sourceMaps from 'rollup-plugin-sourcemaps'
-import typescript from 'rollup-plugin-typescript2'
 import babel from 'rollup-plugin-babel'
-import replace from "rollup-plugin-replace"
 import { eslint } from 'rollup-plugin-eslint'
-import image from '@rollup/plugin-image'
-import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer from 'autoprefixer'
+import builtins from 'rollup-plugin-node-builtins'
+import globals from 'rollup-plugin-node-globals'
 
 const env = process.env.NODE_ENV
 const cwd = process.cwd()
@@ -92,7 +92,7 @@ const configRollup = (options: Options, cb?: OptionsOverrideCallback): RollupOpt
       typescript({
         typescript: require('typescript'),
         useTsconfigDeclarationDir: true,
-        objectHashIgnoreUnknownHack: true,
+        objectHashIgnoreUnknownHack: false,
       }) : null,
       babel({
         babelrc: false,
