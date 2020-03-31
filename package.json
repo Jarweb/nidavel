@@ -1,6 +1,6 @@
 {
   "name": "@jarzzzi/nidavel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "entry": "src/index.ts",
   "main": "dist/index.cjs.js",
   "sideEffects": false,
