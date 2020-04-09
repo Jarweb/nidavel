@@ -1,17 +1,19 @@
-# nidavel 制造兵器的星球
+# nidavel is a planet
 
 ## 特性：
+
 - 支持 cjs、umd、esm
 - 默认支持 ts
 - 默认支持 eslint。需要手动添加 .eslintrc.json 文件
-- 默认 bable + preset-typeScript 进行编译
-- 集成 babel react 优化插件和 es next 实验性插件
-- 默认 src/index.ts 为入口。 dist 为输出目录
+- 默认通过 bable + preset-typeScript 进行编译
+- 集成 babel react 优化插件和 esnext 实验性插件
+- 默认入口 src/index.ts， 默认输出目录 dist
 - 默认不进行代码压缩
-- 默认打包不会增加 polyfill，建议在应用打包中增加 polyfill，以避免重复 polyfill
+- 默认打包不会添加 polyfill，建议在应用打包中进行 polyfill，以避免 polyfill 重复
 
 
 ## 使用：
+
 ```code
 import configRollup from 'nidavel'
 
@@ -30,6 +32,7 @@ export defualt configRollup(options, (config) => {
 ```
 
 ## 配置：
+
 ```code
 type Target = 'cjs' | 'esm' | 'umd'
 
